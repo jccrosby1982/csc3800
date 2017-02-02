@@ -1,0 +1,18 @@
+JOHN CROSBY
+
+https://www.googleapis.com/books/v1/volumes?q={{book_title}}
+https://www.googleapis.com/books/v1/volumes/{{id}}
+Both of these requests had the same headers which are below:
+
+1) Alt-Svc is a custom header
+2) Cache-Control tells all caching mechanisms from server to client whether they may cache the object
+3) Content-Length is the length of the response in octets
+4) Content-Type is the type of content
+5) Date is the date the message was sent
+6) ETag is an identifier for a specific version of a resource
+7) Expires is the date/time which response is considered stale
+8) Server is the name of the server the website is on
+9) Vary tells downstream proxies how to match future request headers to decide whether or not it can use a cached response
+10) X-Content-Type-Options prevents Internet Explorer from MIME-sniffing a response away from declared content-type
+11) X-Frame-Options is clickjacking protection
+12) X-XSS-Protection is cross-site scripting filter (XSS)
