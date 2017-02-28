@@ -1,0 +1,140 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: HOMEWORK 2
+# during dev, should point to your local machine
+host: localhost:10010
+# basePath prefixes all resource paths
+basePath: /
+#
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /gets:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: get_c
+    get:
+      description: Returns the HTTP method and parameter
+      # used as the method name of the controller
+      operationId: get
+      parameters:
+        - name: name
+          in: query
+          description: parameter passed in
+          required: false
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/RegularResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /posts:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: post_c
+    post:
+      description: Returns the HTTP method and parameter
+      # used as the method name of the controller
+      operationId: post
+      parameters:
+        - name: postprm
+          in: body
+          required: true
+          description: parameter passed in
+          schema:
+            $ref: "#/definitions/PostParam"
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/RegularResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /deletes:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: delete_c
+    delete:
+      description: Returns the HTTP method and parameter
+      # used as the method name of the controller
+      operationId: delete
+      parameters:
+        - name: name
+          in: query
+          description: parameter passed in
+          required: false
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/RegularResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /puts:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: put_c
+    put:
+      description: Returns the HTTP method and parameter
+      # used as the method name of the controller
+      operationId: put
+      parameters:
+        - name: putprm
+          in: body
+          required: true
+          description: parameter passed in
+          schema:
+            $ref: "#/definitions/PostParam"
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/RegularResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+  PostParam:
+    required:
+    - message
+    properties:
+      message:
+        type: string
+  RegularResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
