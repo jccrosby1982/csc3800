@@ -1,0 +1,134 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Homework 3",
+		"_postman_id": "f7e48bab-4bb8-fe5e-c6ed-33adeedf69c9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "github",
+			"description": "",
+			"item": [
+				{
+					"name": "GOOD RESPONSE, MAY NEED TO UPDATE THE TOKEN IN HEADER",
+					"request": {
+						"url": "\thttp://jccrosby1982-test.apigee.net/github?token=110c1a208f9cbacb409878b67c4773c00a2d7b46",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer bDNHSJuuTc5CmCfvEHTc1eX86zxL",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This is for valid GET, might need to post the oauth to get the header key"
+					},
+					"response": []
+				},
+				{
+					"name": "BAD GITHUB CREDENTIALS, UPDATE TOKEN IN HEADER HERE TOO",
+					"request": {
+						"url": "\thttp://jccrosby1982-test.apigee.net/github?token=110c1a208f9cbacb409878b67c4773c00a2d",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer bDNHSJuuTc5CmCfvEHTc1eX86zxL",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Invalid GET if header authorization key is wrong. "
+					},
+					"response": []
+				},
+				{
+					"name": "TRYING TO ACCESS API WITH NO TOKEN, SHOULD FAIL",
+					"request": {
+						"url": "https://jccrosby1982-test.apigee.net/github?token=110c1a208f9cbacb409878b67c4773c00a2d7b46",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "oauth",
+			"description": "",
+			"item": [
+				{
+					"name": "POST HERE TO GET APIGEE TOKEN",
+					"request": {
+						"url": "https://jccrosby1982-test.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials ",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "rREDDJx0Z61rjN8GF3nnzkiYmokSYDNt",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "client_secret",
+									"value": "AxyGR7FZb34yQnBl",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "This should be a valid post to get the token"
+					},
+					"response": []
+				},
+				{
+					"name": "THIS POST HAS BAD CREDENTIALS",
+					"request": {
+						"url": "https://jccrosby1982-test.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials ",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "hQxetncqe6MgM3Ia3bLa6WS3bYAA14w1",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "client_secret",
+									"value": "ZCDrhMWmiosmdH8",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "This is the invalid post"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
