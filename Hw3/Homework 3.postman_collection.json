@@ -14,12 +14,12 @@
 				{
 					"name": "GOOD RESPONSE, MAY NEED TO UPDATE THE TOKEN IN HEADER",
 					"request": {
-						"url": "\thttp://jccrosby1982-test.apigee.net/github?token=110c1a208f9cbacb409878b67c4773c00a2d7b46",
+						"url": "\thttp://jccrosby1982-test.apigee.net/github?token=a653754aacda9c9208ca788899f938627d289b9c",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer bDNHSJuuTc5CmCfvEHTc1eX86zxL",
+								"value": "Bearer d7MuhMTON1w1G1Gfc8ajtKNj5E5h",
 								"description": ""
 							}
 						],
