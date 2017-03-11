@@ -14,12 +14,12 @@
 				{
 					"name": "GOOD RESPONSE, MAY NEED TO UPDATE THE TOKEN IN HEADER",
 					"request": {
-						"url": "\thttp://jccrosby1982-test.apigee.net/github?token=a653754aacda9c9208ca788899f938627d289b9c",
+						"url": "\thttp://jccrosby1982-test.apigee.net/github",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer d7MuhMTON1w1G1Gfc8ajtKNj5E5h",
+								"value": "Bearer lJzh4TJcXfK4oyD8gY0W0FIWv6hX",
 								"description": ""
 							}
 						],
@@ -29,28 +29,17 @@
 					"response": []
 				},
 				{
-					"name": "BAD GITHUB CREDENTIALS, UPDATE TOKEN IN HEADER HERE TOO",
+					"name": "BAD RESPONSE, INVALID TOKEN",
 					"request": {
-						"url": "\thttp://jccrosby1982-test.apigee.net/github?token=110c1a208f9cbacb409878b67c4773c00a2d",
+						"url": "\thttp://jccrosby1982-test.apigee.net/github",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer bDNHSJuuTc5CmCfvEHTc1eX86zxL",
+								"value": "Bearer lJzh4TJcXfK4oyD8gI",
 								"description": ""
 							}
 						],
-						"body": {},
-						"description": "Invalid GET if header authorization key is wrong. "
-					},
-					"response": []
-				},
-				{
-					"name": "TRYING TO ACCESS API WITH NO TOKEN, SHOULD FAIL",
-					"request": {
-						"url": "https://jccrosby1982-test.apigee.net/github?token=110c1a208f9cbacb409878b67c4773c00a2d7b46",
-						"method": "GET",
-						"header": [],
 						"body": {},
 						"description": ""
 					},
@@ -79,13 +68,13 @@
 							"urlencoded": [
 								{
 									"key": "client_id",
-									"value": "rREDDJx0Z61rjN8GF3nnzkiYmokSYDNt",
+									"value": "hrpXB4VMxGHIRjjAmohcP8mHHJpHtUHu",
 									"type": "text",
 									"enabled": true
 								},
 								{
 									"key": "client_secret",
-									"value": "AxyGR7FZb34yQnBl",
+									"value": "DNi9AsNxqClEXfR8",
 									"type": "text",
 									"enabled": true
 								}
