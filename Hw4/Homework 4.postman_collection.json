@@ -1,0 +1,255 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Homework 4",
+		"_postman_id": "ad053066-54db-e670-2418-d075dc524110",
+		"description": "Homework 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Grader",
+			"description": "",
+			"item": [
+				{
+					"name": "GET on base",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Should give some helpful advice. PUT POST DELETE should return error. "
+					},
+					"response": []
+				},
+				{
+					"name": "GET on /movies (all movies)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Should get every movie in DB"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT on /movies (should be an error)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": "Should not be allowed to PUT to /movies"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE on /movies (should be an error)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST to /movies (should make a movie called Test. Using this command should give an error.)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Best Movie Ever\",\n\t\"releaseDate\" : \"09-NEVERUARY-2007\",\n\t\"actors\" : [\"John Doe\", \"Jane Doe\", \"Shawn McCarthy\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST to /movies (not enough info)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Best Movie Ever\",\n\t\"actors\" : [\"John Doe\", \"Jane Doe\", \"Shawn McCarthy\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get on /movies/World War Z (should work)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/World War Z",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST on /movies/World War Z (should not work)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/World War Z",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT to /movies/World War Z (changes the release date)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/World War Z",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"releaseDate\" : \"21-JUNE-2015\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE on /movies/Test (use the POST to /movies first. DELETE x2 should cause error)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/Best Movie Ever",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost (grader can ignore this)",
+			"description": "LocalHost\n",
+			"item": [
+				{
+					"name": "Homepage",
+					"request": {
+						"url": "localhost:3000",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "HomePage\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Movies",
+					"request": {
+						"url": "localhost:3000/movies",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Movies"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT error on /movies",
+					"request": {
+						"url": "localhost:3000/movies",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE error on /movies",
+					"request": {
+						"url": "localhost:3000/movies",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST to /movies",
+					"request": {
+						"url": "localhost:3000/movies",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"300\",\n\t\"releaseDate\" : \"09-MARCH-2007\",\n\t\"actors\" : [\"Gerard Butler\", \"Lena Headey\", \"Dominic West\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT for a movie",
+					"request": {
+						"url": "localhost:3000/movies/express1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"releaseDate\" : \"12-01-1999\",\n\t\"actors\" : [\"Cloud\", \"Sephiroth\", \"Barret\"],\n\t\"meals\" : \"Bananas\"\n}"
+						},
+						"description": "PUT for a movie"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/movies/300",
+					"request": {
+						"url": "localhost:3000/movies/300",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
