@@ -1,0 +1,564 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Homework 5",
+		"_postman_id": "875b4075-7b86-14a3-0d33-14bf2237801d",
+		"description": "Homework 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Grader",
+			"description": "",
+			"item": [
+				{
+					"name": "GET on base",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Should give some helpful advice. PUT POST DELETE should return error. "
+					},
+					"response": []
+				},
+				{
+					"name": "GET on /movies (all movies, no reviews)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Should get every movie in DB"
+					},
+					"response": []
+				},
+				{
+					"name": "GET on /movies (all movies, with reviews)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies?reviews=true",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT on /movies (should be an error)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Should not be allowed to PUT to /movies"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE on /movies (should be an error)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST to /movies (should make a movie called Test. Using this command should give an error.)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Best Movie Ever\",\n\t\"releaseDate\" : \"09-NEVERUARY-2007\",\n\t\"actors\" : [\"John Doe\", \"Jane Doe\", \"Shawn McCarthy\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST to /movies (not enough info)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Best Movie Ever\",\n\t\"actors\" : [\"John Doe\", \"Jane Doe\", \"Shawn McCarthy\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get on /movies/World War Z (should work, no reviews)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/World War Z",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET on /movies/World War Z (should work, with reviews)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/World War Z?reviews=true",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST on /movies/World War Z (should not work)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/World War Z",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT to /movies/World War Z (changes the release date)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/World War Z",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"releaseDate\" : \"21-JUNE-2015\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE on /movies/Test (use the POST to /movies first. DELETE x2 should cause error)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/Best Movie Ever",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET on /reviews (all reviews)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT on /reviews (should not work)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE on /reviews (should not work) ",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST to /reviews (should work)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"movie\" : \"Best Movie Ever\",\n\t\"reviewer\" : \"John\", \n\t\"quote\" : \"This movie ROCKS!!\", \n\t\"stars\" : \"5\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST to /reviews (not enough info) ",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"movie\" : \"Best Movie Ever\",\n\t\"reviewer\" : \"John\", \n\t\"stars\" : \"5\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET specific review (should work) ",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews/f56d72c4-1643-11e7-990c-0eec2415f3df",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET specific review (wrong UUID) ",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews/f56d72c4-1643-11e7-990c",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST specific review (should not work) ",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews/f56d72c4-1643-11e7-990c-0eec2415f3df",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT specific review (should change stars amount) ",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews/f56d72c4-1643-11e7-990c-0eec2415f3df",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"stars\" : \"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE a specific review (should work) ",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews/5ba66376-1c03-11e7-9fee-0ad881f403bf",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost (grader can ignore this)",
+			"description": "LocalHost\n",
+			"item": [
+				{
+					"name": "Homepage",
+					"request": {
+						"url": "localhost:3000",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "HomePage\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Movies",
+					"request": {
+						"url": "localhost:3000/movies?reviews=true",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Movies"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT error on /movies",
+					"request": {
+						"url": "localhost:3000/movies",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE error on /movies",
+					"request": {
+						"url": "localhost:3000/movies",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST to /movies",
+					"request": {
+						"url": "localhost:3000/movies",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"300\",\n\t\"releaseDate\" : \"09-MARCH-2007\",\n\t\"actors\" : [\"Gerard Butler\", \"Lena Headey\", \"Dominic West\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT for a movie",
+					"request": {
+						"url": "localhost:3000/movies/express1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"releaseDate\" : \"12-01-1999\",\n\t\"actors\" : [\"Cloud\", \"Sephiroth\", \"Barret\"],\n\t\"meals\" : \"Bananas\"\n}"
+						},
+						"description": "PUT for a movie"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/movies/300",
+					"request": {
+						"url": "localhost:3000/movies/300",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET on reviews",
+					"request": {
+						"url": "localhost:3000/reviews",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE on /reviews",
+					"request": {
+						"url": "localhost:3000/reviews",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT on /reviews",
+					"request": {
+						"url": "localhost:3000/reviews",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST on /reviews",
+					"request": {
+						"url": "localhost:3000/reviews",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"movie\" : \"Best Movie Ever\",\n\t\"reviewer\" : \"Shawn McCarthy\", \n\t\"quote\" : \"This movie ROCKS!!\", \n\t\"stars\" : \"5\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST to /reviews (not enough info)",
+					"request": {
+						"url": "localhost:3000/reviews ",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET on specific review.",
+					"request": {
+						"url": "localhost:3000/reviews/13ae6bef-1642-11e7-990c-0eec2415f3df",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE specific review",
+					"request": {
+						"url": "localhost:3000/reviews/a4cefbc0-1bb8-11e7-990c-0eec2415f3df",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST to a specific review (should error)",
+					"request": {
+						"url": "localhost:3000/reviews/a4cefbc0-1bb8-11e7-990c-0eec2415f3df",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT to a specific review",
+					"request": {
+						"url": "localhost:3000/reviews/a4cefbc0-1bb8-11e7-990c-0eec2415f3df",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"movie\" : \"Best Movie Ever\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
