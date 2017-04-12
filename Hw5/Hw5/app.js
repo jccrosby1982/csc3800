@@ -1,4 +1,4 @@
-//SETS UP EXPRESS, REQUEST, AND BODYPARSER
+//SETS UP EXPRESS, REQUEST, AND BODYPARSER 1
 var express = require('express');
 var app = express();
 var request = require('request');
@@ -309,27 +309,51 @@ app.put('/reviews', function(req,res){
 	});
 });
 app.post('/reviews', jsonParser, function(req, res){
-	if (req.body.movie == undefined || req.body.quote == undefined || req.body.stars == undefined || req.body.reviewer == undefined){
-			res.status(400).send({"status" : "400", "description" : "Not enough information needed to POST the review. Need movie, reviewer, quote and stars."});
-	} else {
+	async.series([
+		//CHECKS THE POST TO SEE IF ALL EXPECTED DATA IS PRESENT
+		function checkParams(callback){
+			if (req.body.movie == undefined || req.body.quote == undefined || req.body.stars == undefined || req.body.reviewer == undefined){
+					res.status(400).send({"status" : "400", "description" : "Not enough information needed to POST the review. Need movie, reviewer, quote and stars."});
+				} else{
+					callback();
+				}
+		},
+		//CHECKS TO SEE IF MOVIE IS IN DATABASE
+		function checkMovie(callback){
+			var rqst = 'https://apibaas-trial.apigee.net/jccrosby/sandbox/movies/' + req.body.movie;
 			request({
-				 url: 'https://apibaas-trial.apigee.net/jccrosby/sandbox/reviews' ,
-				 method: 'POST',
-				 json: true,
-				 body: {
-							 "movie" : req.body.movie,
-							 "reviewer" : req.body.reviewer,
-							 "quote": req.body.quote,
-							 "stars" : req.body.stars
-								}
-				 }, function(error, response, body){
-							 if(error) {
+				url: rqst,
+				method: 'GET',
+				json: true
+				}, function(error, response, body){
+							if(error) {
+								console.log(error);
+							} else {
+							if(body.error){
+								res.status(400).json({"status" : "400", "description" : "Movie is not in the database, you can not post that review."});
+							}else{
+								callback();
+							}
+						}
+					});//end of request
+		},
+		//IF MOVIE IS THERE THEN POST THE DATA
+		function postReview(callback){
+				request({
+				 	url: 'https://apibaas-trial.apigee.net/jccrosby/sandbox/reviews' ,
+				 	method: 'POST',
+				 	json: true,
+				 	body: {
+						"movie" : req.body.movie,
+						"reviewer" : req.body.reviewer,
+						"quote": req.body.quote,
+						"stars" : req.body.stars
+					}
+				 	}, function(error, response, body){
+								if(error) {
 										console.log(error);
 										res.json(error);
-							 } else {
-								 if (body.error){
-										res.status(400).json({"status" : "400", "description" : "Movie is already in the database"});
-								 }else{
+							 	} else {
 										var newBody = {};
 										newBody.status = "200";
 										newBody.description = "POST successful!";
@@ -339,10 +363,10 @@ app.post('/reviews', jsonParser, function(req, res){
 										newBody.stars = body.entities[0].stars;
 										newBody.UUID = body.entities[0].uuid;
 										res.json(newBody);
-								 }
-							 }
-				});
-	}
+									}
+					});//end of request
+		}//end of postReview
+	]);//end of series
 });
 //------------------------------------------------------
 // SPECIFIC REVIEWS part

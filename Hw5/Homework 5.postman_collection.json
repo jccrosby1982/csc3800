@@ -144,6 +144,28 @@
 					"response": []
 				},
 				{
+					"name": "GET on /movies/World War 10 (Movie not in database, no review)",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/World War 10",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET on /movie/World War 10 (Movie not in database, with reviews) ",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/movies/World War 10?reviews=true",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
 					"name": "POST on /movies/World War Z (should not work)",
 					"request": {
 						"url": "http://jccrosby1982-test.apigee.net/movies/World War Z",
@@ -225,26 +247,6 @@
 					"response": []
 				},
 				{
-					"name": "POST to /reviews (should work)",
-					"request": {
-						"url": "http://jccrosby1982-test.apigee.net/reviews",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"movie\" : \"Best Movie Ever\",\n\t\"reviewer\" : \"John\", \n\t\"quote\" : \"This movie ROCKS!!\", \n\t\"stars\" : \"5\"\n}"
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
 					"name": "POST to /reviews (not enough info) ",
 					"request": {
 						"url": "http://jccrosby1982-test.apigee.net/reviews",
@@ -265,20 +267,49 @@
 					"response": []
 				},
 				{
-					"name": "GET specific review (should work) ",
+					"name": "POST to /reviews (should work)",
 					"request": {
-						"url": "http://jccrosby1982-test.apigee.net/reviews/f56d72c4-1643-11e7-990c-0eec2415f3df",
-						"method": "GET",
-						"header": [],
-						"body": {},
+						"url": "http://jccrosby1982-test.apigee.net/reviews",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"movie\" : \"World War Z\",\n\t\"reviewer\" : \"Gary\", \n\t\"quote\" : \"Meh, It was OK\", \n\t\"stars\" : \"2\"\n}"
+						},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "GET specific review (wrong UUID) ",
+					"name": "POST on /review (not a movie in database, shouldn't work) ",
 					"request": {
-						"url": "http://jccrosby1982-test.apigee.net/reviews/f56d72c4-1643-11e7-990c",
+						"url": "http://jccrosby1982-test.apigee.net/reviews",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"movie\" : \"Guardians of the Universe\",\n\t\"reviewer\" : \"Kelly\", \n\t\"quote\" : \"This movie didn't even actually exist. What the heck?!?\", \n\t\"stars\" : \"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET specific review (should work) ",
+					"request": {
+						"url": "http://jccrosby1982-test.apigee.net/reviews/f56d72c4-1643-11e7-990c-0eec2415f3df",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -298,29 +329,9 @@
 					"response": []
 				},
 				{
-					"name": "PUT specific review (should change stars amount) ",
-					"request": {
-						"url": "http://jccrosby1982-test.apigee.net/reviews/f56d72c4-1643-11e7-990c-0eec2415f3df",
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"stars\" : \"1\"\n}"
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
 					"name": "DELETE a specific review (should work) ",
 					"request": {
-						"url": "http://jccrosby1982-test.apigee.net/reviews/5ba66376-1c03-11e7-9fee-0ad881f403bf",
+						"url": "http://jccrosby1982-test.apigee.net/reviews/5dba11ac-1641-11e7-990c-0eec2415f3df",
 						"method": "DELETE",
 						"header": [],
 						"body": {},
@@ -488,7 +499,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"movie\" : \"Best Movie Ever\",\n\t\"reviewer\" : \"Shawn McCarthy\", \n\t\"quote\" : \"This movie ROCKS!!\", \n\t\"stars\" : \"5\"\n}"
+							"raw": "{\n\t\"movie\" : \"300\",\n\t\"reviewer\" : \"Shawn\", \n\t\"quote\" : \"This movie ROCKS!!\", \n\t\"stars\" : \"5\"\n}"
 						},
 						"description": ""
 					},
