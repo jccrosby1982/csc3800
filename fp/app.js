@@ -26,7 +26,13 @@ app.put('/', function(req,res){
 app.delete('/', function(req, res){
   res.status(400).send({"status" : "400", "description" : "You can not send a DELETE here, use GET for more info"});
 });
-
+// USE CORS HEADERS
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 //----------------------------------------------------------------------
 // CHECOUT ENDPOINT
 //-----------------------------------------------------------------------
@@ -63,7 +69,7 @@ app.post('/checkout', jsonParser, cors(), function(req, res){
 		},//end of error checking function
 		function geoLoc(callback){
 			// CHECKS IP ADDRESS GEOLOCATION TO ALLOW PROCCESSING OR TO REJECT PROCESSING OF PAYMENTS.
-			var rqst1 = "https://ipfind.co?ip=" + ip + "&auth=0a649d5e-8ade-4e9a-8645-96477f4d6198";
+			var rqst1 = "https://ipinfo.io/" + ip + "/geo";
 			request({
 				url : rqst1,
 				method: 'GET',
@@ -84,8 +90,7 @@ app.post('/checkout', jsonParser, cors(), function(req, res){
 			var userGeo = {};
 			userGeo.name = ip;
 			userGeo.city = geoLoc1.city;
-			userGeo.county = geoLoc1.county;
-			userGeo.state = geoLoc1.state;
+			userGeo.state = geoLoc1.region;
 			userGeo.country = geoLoc1.country;
 			//send it to apigee
 			request({
@@ -105,7 +110,7 @@ app.post('/checkout', jsonParser, cors(), function(req, res){
 								 }
 					});
 					//check to see if it is a CO address
-					if(geoLoc1.region_code != "CO"){
+					if(geoLoc1.region != "Colorado"){
 						res.status(400).json({"status": "400", "description" : "The IP address is not from Colorado."});
 					} else {
 						callback();
