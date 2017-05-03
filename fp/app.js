@@ -144,7 +144,7 @@ app.post('/checkout', jsonParser, cors(), function(req, res){
 				callback();
 			}).catch(function(err) {
   		// Deal with an error
-				res.send(err);
+				res.status(400).json(err);
 			});//end of Stripe module
 		}//end of stripe function
 	],function(err,result){
