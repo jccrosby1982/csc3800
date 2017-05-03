@@ -1,0 +1,226 @@
+<manifest alg="2" build="2017.0.2.363" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="http://dinolandia01.businesscatalyst.com/index.html" resolutions="1x" timestamp="1493341968694">
+  <folder name="css">
+    <file name="site_global.css" crc="443350757"/>
+    <file name="master_a-master.css" crc="3982957239" ref="index"/>
+    <file name="nomq_preview_master_a-master.css" crc="3777254631" ref="index"/>
+    <file name="master_b-master.css" crc="3886728958" ref="buy-now:fail:prices:success:about"/>
+    <file name="nomq_preview_master_b-master.css" crc="328441256" ref="buy-now:fail:prices:success:about"/>
+    <file name="buy-now.css" crc="3888382737" ref="buy-now"/>
+    <file name="nomq_buy-now.css" crc="4201253614" ref="buy-now"/>
+    <file name="index.css" crc="23835360" ref="index"/>
+    <file name="nomq_index.css" crc="321627273" ref="index"/>
+    <file name="fail.css" crc="3915629227" ref="fail"/>
+    <file name="nomq_fail.css" crc="187479770" ref="fail"/>
+    <file name="prices.css" crc="4226397666" ref="prices"/>
+    <file name="nomq_prices.css" crc="4014658752" ref="prices"/>
+    <file name="success.css" crc="3976662310" ref="success"/>
+    <file name="nomq_success.css" crc="247962500" ref="success"/>
+    <file name="about.css" crc="3823320104" ref="about"/>
+    <file name="nomq_about.css" crc="4281411011" ref="about"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="museutils.js" crc="4232573551" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="whatinput.js" crc="86476730" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="museconfig.js" crc="4152223963" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="jquery.watch.js" crc="3844535323" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="webpro.js" crc="3770351119" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="musewpslideshow.js" crc="4244742588" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="jquery.museoverlay.js" crc="432750910" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="touchswipe.js" crc="3912873526" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="jquery.musemenu.js" crc="38860304" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="3880853905" ref="index:about:prices"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="jquery.museresponsive.js" crc="433634197" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="require.js" crc="4234670167" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="form_check.php" crc="3841221102" ref="buy-now"/>
+    <file name="form_throttle.php" crc="4048049783" ref="buy-now"/>
+    <file name="form_process.php" crc="3899230280" ref="buy-now"/>
+    <file name="form-u40364.php" crc="4272930029" ref="buy-now"/>
+    <file name="form-u40662.php" crc="3900914896" ref="buy-now"/>
+  </folder>
+  <folder name="images">
+    <file name="pasted-svg-491689x359.svg" crc="240520680" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="pasted svg 491689x359_poster_.png" crc="394182234" ref="index"/>
+    <file name="pasted-svg-714714x522.svg" crc="4131793579" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="pasted svg 714714x522_poster_.png" crc="62929093" ref="index"/>
+    <file name="pasted-svg-769119x478.svg" crc="3858225106" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="pasted svg 769119x478_poster_.png" crc="4072220646" ref="index"/>
+    <file name="pasted-svg-62411x432.svg" crc="4081470916" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="pasted svg 62411x432_poster_.png" crc="4173217723" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index:about:prices:buy-now:success:fail"/>
+    <file name="burger.svg" crc="4029076532" ref="index:about:buy-now:success"/>
+    <file name="burger_poster_u5128.png" crc="409201318" ref="index:about:buy-now:success"/>
+    <file name="close.svg" crc="4127375572" ref="index:about:buy-now:success"/>
+    <file name="close_poster_u39478.png" crc="419285802" ref="index:about:buy-now:success"/>
+    <file name="pasted-svg-714714x5222.svg" crc="188329936" seo="true" ref="index:prices">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+    </file>
+    <file name="pasted svg 714714x522_poster_2.png" crc="350219870" ref="index"/>
+    <file name="pasted-svg-769119x4782.svg" crc="381924020" seo="true" ref="index:prices">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+    </file>
+    <file name="pasted svg 769119x478_poster_2.png" crc="4081827476" ref="index"/>
+    <file name="pasted-svg-62411x4322.svg" crc="4081470916" seo="true" ref="index:prices">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+    </file>
+    <file name="pasted svg 62411x432_poster_2.png" crc="4173217723" ref="index"/>
+    <file name="dbd13529.jpg" crc="4174047425" ref="index:prices">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+    </file>
+    <file name="pasted-svg-714714x5223.svg" crc="188329936" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="pasted svg 714714x522_poster_3.png" crc="350219870" ref="index"/>
+    <file name="center_ar.png" crc="31933284" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="88a39c3e.jpg" crc="4132705950" ref="index:about:prices:buy-now">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="buy-now" alt=""/>
+      <caption webpage="buy-now" alt=""/>
+      <caption webpage="buy-now" alt=""/>
+      <caption webpage="buy-now" alt=""/>
+      <caption webpage="buy-now" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+      <caption webpage="prices" alt=""/>
+    </file>
+    <file name="center2_ar.png" crc="38833004" ref="index:about:prices">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="12540567_803991626373458_1174379438912175989_n.jpg" crc="65989203" seo="true" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="12540567_803991626373458_1174379438912175989_n319x314.jpg" crc="289244397" seo="true" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="12540567_803991626373458_1174379438912175989_n-crop-u29079.jpg" crc="4016170874" seo="true" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="12540567_803991626373458_1174379438912175989_n240x236.jpg" crc="4027034356" seo="true" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="pasted-svg-491689x3592.svg" crc="240520680" seo="true" ref="buy-now">
+      <caption webpage="buy-now" alt=""/>
+      <caption webpage="buy-now" alt=""/>
+      <caption webpage="buy-now" alt=""/>
+      <caption webpage="buy-now" alt=""/>
+      <caption webpage="buy-now" alt=""/>
+    </file>
+    <file name="pasted svg 491689x359_poster_2.png" crc="169378825" ref="buy-now"/>
+  </folder>
+  <file name="index.html" crc="425845222" seo="true" mt="1493341945129" redirect="true"/>
+  <file name="about.html" crc="4292619685" seo="true" mt="1493341951970" redirect="true"/>
+  <file name="prices.html" crc="4003694487" seo="true" mt="1493339418347" redirect="true"/>
+  <file name="buy-now.html" crc="4197845877" seo="true" mt="1493341958361" redirect="true"/>
+  <file name="success.html" crc="4274485461" seo="true" mt="1493340382539" redirect="true"/>
+  <file name="fail.html" crc="4094214338" seo="true" mt="1493340406342" redirect="true"/>
+</manifest>
